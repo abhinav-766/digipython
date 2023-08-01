@@ -3,7 +3,7 @@ from turtle import *
 speed('fast')
 pencolor('yellow')
 bgcolor('#303030')
-pensize(4)
+pensize(2)
 
 i=100
 while i >0:
