@@ -17,16 +17,38 @@ ps=5
 es=2
 
 def player_movement():
+    global score
     if keyboard.left:
         player.x -= ps
         player.angle =10
-    if keyboard.right:
+    elif keyboard.right:
         player.x += ps
         player.angle =10
-    if keyboard.up:
+    elif keyboard.up:
         player.y -= ps    
-    if keyboard.down:
-        player .y += ps    
+    elif keyboard.down:
+        player .y += ps 
+    else:    
+         player.angle = 0       
+
+    # collision detection
+    if player.colliderect(coin):
+        coin.x = randint(50, WIDTH-50)
+        coin.y = randint(50, HEIGHT-50)    
+        sounds.action.play() 
+        score +=1
+
+
+def enemy_movement():
+    if alien.x < player.x:
+        alien.x += es
+    elif alien.x > player.x:
+        alien.x -= es
+    if alien.y < player.y:
+        alien.y += es
+    elif alien.y > player.y:
+        alien.y -= es
+
 
 
 
@@ -46,5 +68,6 @@ def draw():
 def update(dt):
     print(dt)
     player_movement()
+    enemy_movement()
 
 pgzrun.go()    
