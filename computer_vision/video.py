@@ -1,7 +1,7 @@
 import cv2   # library
 import numpy as np
 
-VIDEO_PATH = r"C:\Users\Aman\OneDrive\Pictures\WIN_20230112_00_09_46_Pro.mp4"# 0: default camera
+VIDEO_PATH = r"C:\Users\Asus\Downloads\Vinland Saga\[Cerberus] Vinland Saga - S01E01 - [F7B9EB8F].mkv"# 0: default camera
 cam = cv2.VideoCapture(VIDEO_PATH)
 
 while cam.isOpened():
